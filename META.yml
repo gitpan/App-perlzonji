@@ -26,4 +26,4 @@ resources:
   homepage: http://search.cpan.org/dist/App-perlzonji/
   license: http://dev.perl.org/licenses/
   repository: git://github.com/hanekomu/app-perlzonji.git
-version: 0.01
+version: 0.02
