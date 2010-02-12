@@ -20,10 +20,11 @@ no_index:
     - t
     - xt
 requires:
+  Pod::Usage::CommandLine: 0.04
   perl: 5.8.0
 resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji
   homepage: http://search.cpan.org/dist/App-perlzonji/
   license: http://dev.perl.org/licenses/
   repository: git://github.com/hanekomu/app-perlzonji.git
-version: 0.02
+version: 0.03
