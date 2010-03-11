@@ -1,42 +1,91 @@
 NAME
     App::perlzonji - a more knowledgeable perldoc
 
+VERSION
+    version 1.100710
+
 SYNOPSIS
         # perlzonji UNIVERSAL::isa
         # (runs `perldoc perlobj`)
 
 DESCRIPTION
-    This is just a marker package so you can install this distribution from
-    the CPAN shell.
+    "perlzonji" is like "perldoc" except it knows about more things. Try
+    these:
 
-BUGS AND LIMITATIONS
-    No bugs have been reported.
+        perlzonji xor
+        perlzonji foreach
+        perlzonji isa
+        perlzonji AUTOLOAD
+        perlzonji TIEARRAY
+        perlzonji INPUT_RECORD_SEPARATOR
+        perlzonji PERL5OPT
+        perlzonji :mmap
+        perlzonji __WARN__
+        perlzonji __PACKAGE__
+        perlzonji head4
 
-    Please report any bugs or feature requests through the web interface at
-    <http://rt.cpan.org>.
+    For efficiency, "alias pod=perlzonji".
+
+    The word "zonji" means "knowledge of" in Japanese. Another example is
+    the question "gozonji desu ka", meaning "Do you know?" - "go" is a
+    prefix added for politeness.
+
+FUNCTIONS
+  run
+    The main function, which is called by the "perlzonji" program.
+
+  try_module
+    Takes as argument the name of a module, tries to load that module and
+    executes the formatter, giving that module as an argument. If loading
+    the module fails, this subroutine does nothing.
+
+  execute
+    Executes the given command using "exec()". In debug mode, it also prints
+    the command before executing it.
+
+OPTIONS
+    Options can be shortened according to "Case and abbreviations" in
+    Getopt::Long.
+
+    "--perldoc-command"
+        Specifies the POD formatter/pager to delegate to. Default is
+        "perldoc". "annopod" from AnnoCPAN::Perldoc is a better alternative.
+
+    "--debug"
+        Prints the whole command before executing it.
+
+    "--help"
+        Prints a brief help message and exits.
+
+    "--man"
+        Prints the manual page and exits.
 
 INSTALLATION
     See perlmodinstall for information and options on installing Perl
     modules.
 
+BUGS AND LIMITATIONS
+    No bugs have been reported.
+
+    Please report any bugs or feature requests through the web interface at
+    <http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji>.
+
 AVAILABILITY
     The latest version of this module is available from the Comprehensive
     Perl Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a
-    CPAN site near you. Or see <http://search.cpan.org/dist/App-perlzonji/>.
+    CPAN site near you, or see <http://search.cpan.org/dist/App-perlzonji/>.
 
     The development version lives at
-    <http://github.com/hanekomu/app-perlzonji/>. Instead of sending patches,
+    <http://github.com/hanekomu/App-perlzonji/>. Instead of sending patches,
     please fork this project using the standard git and github
     infrastructure.
 
-AUTHORS
-    Marcel Grünauer, "<marcel@cpan.org>"
-
-    Lars Dieckow, "<daxim@cpan.org>"
+AUTHOR
+      Marcel Gruenauer <marcel@cpan.org>
 
 COPYRIGHT AND LICENSE
-    Copyright 2010 by Marcel Grünauer
+    This software is copyright (c) 2010 by Marcel Gruenauer.
 
-    This library is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
 

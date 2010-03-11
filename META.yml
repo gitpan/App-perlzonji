@@ -1,30 +1,31 @@
 ---
 abstract: 'a more knowledgeable perldoc'
 author:
-  - 'Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>'
-build_requires:
-  ExtUtils::MakeMaker: 6.42
-  Test::More: 0.70
+  - 'Marcel Gruenauer <marcel@cpan.org>'
+build_requires: {}
 configure_requires:
-  ExtUtils::MakeMaker: 6.42
-distribution_type: module
-generated_by: 'Module::Install version 0.91'
+  ExtUtils::MakeMaker: 6.11
+generated_by: 'Dist::Zilla version 1.100660'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: App-perlzonji
-no_index:
-  directory:
-    - inc
-    - t
-    - xt
+provides:
+  App::perlzonji:
+    file: lib/App/perlzonji.pm
+    version: 1.100710
 requires:
-  Pod::Usage::CommandLine: 0.04
-  perl: 5.8.0
+  Carp: 0
+  English: 0
+  File::Find: 0
+  File::Temp: 0
+  Pod::Usage::CommandLine: 0
+  Scalar::Util: 0
+  Test::More: 0
+  perl: 5.008
 resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji
   homepage: http://search.cpan.org/dist/App-perlzonji/
-  license: http://dev.perl.org/licenses/
-  repository: git://github.com/hanekomu/app-perlzonji.git
-version: 0.04
+  repository: http://github.com/hanekomu/App-perlzonji
+version: 1.100710
