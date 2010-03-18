@@ -23,9 +23,9 @@ my %WriteMakefileArgs = (
                        'EXE_FILES' => [
                                         'bin/perlzonji'
                                       ],
-                       'VERSION' => '1.100710',
+                       'VERSION' => '1.100770',
                        'PREREQ_PM' => {
-                                        'Test::More' => '0',
+                                        'Test::More' => '0.88',
                                         'Scalar::Util' => '0',
                                         'English' => '0',
                                         'File::Find' => '0',

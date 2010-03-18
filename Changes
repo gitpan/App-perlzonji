@@ -1,6 +1,14 @@
 Revision history for Perl extension App-perlzonji
 
-1.100710  2010-03-12 00:47:41 Europe/Vienna
+1.100770  2010-03-18 21:52:17 Europe/Vienna
+    - removed weaver.ini since that's handled in Dist::Zilla's [@MARCEL] now
+    - exposed %found_in as a package global
+    - removed Class::MethodMaker definitions
+    - added Moose definitions
+    - removed duplicates
+    - added dedup test
+
+1.100710  2010-03-12 00:48:03 Europe/Vienna
     - converted the distribution to Dist::Zilla-style
     - moved the code to App::perlzonji; bin/perlzonji is just a thin wrapper
     - documented the subroutines

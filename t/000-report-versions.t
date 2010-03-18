@@ -1,7 +1,7 @@
 #!perl
 use warnings;
 use strict;
-use Test::More;
+use Test::More 0.88;
 
 # Include a cut-down version of YAML::Tiny so we don't introduce unnecessary
 # dependencies ourselves.
@@ -422,6 +422,7 @@ BEGIN {
         next if $skip{$module};
         use_ok $module or BAIL_OUT("can't load $module");
         my $version = $module->VERSION;
+        $version = 'undefined' unless defined $version;
         diag("    $module version is $version");
     }
     done_testing;
