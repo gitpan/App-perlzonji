@@ -14,7 +14,7 @@
    "configure_requires" : {
       "ExtUtils::MakeMaker" : "6.31"
    },
-   "generated_by" : "Dist::Zilla version 2.100991",
+   "generated_by" : "Dist::Zilla version 2.100960",
    "license" : "perl",
    "meta-spec" : {
       "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html",
@@ -24,30 +24,31 @@
    "provides" : {
       "App::perlzonji" : {
          "file" : "lib/App/perlzonji.pm",
-         "version" : "1.101000"
+         "version" : "1.101420"
       },
       "App::perlzonji::Plugin::FoundIn" : {
          "file" : "lib/App/perlzonji/Plugin/FoundIn.pm",
-         "version" : "1.101000"
+         "version" : "1.101420"
       },
       "App::perlzonji::Plugin::Label" : {
          "file" : "lib/App/perlzonji/Plugin/Label.pm",
-         "version" : "1.101000"
+         "version" : "1.101420"
       },
       "App::perlzonji::Plugin::SpecialPackages" : {
          "file" : "lib/App/perlzonji/Plugin/SpecialPackages.pm",
-         "version" : "1.101000"
+         "version" : "1.101420"
       },
       "App::perlzonji::Plugin::UseModule" : {
          "file" : "lib/App/perlzonji/Plugin/UseModule.pm",
-         "version" : "1.101000"
+         "version" : "1.101420"
       }
    },
    "recommends" : {},
    "requires" : {
       "Class::Trigger" : "0",
+      "Getopt::Long" : "0",
       "Module::Pluggable" : "0",
-      "Pod::Usage::CommandLine" : "0",
+      "Pod::Usage" : "0",
       "perl" : "5.008"
    },
    "resources" : {
@@ -55,6 +56,6 @@
       "homepage" : "http://search.cpan.org/dist/App-perlzonji/",
       "repository" : "http://github.com/hanekomu/App-perlzonji"
    },
-   "version" : "1.101000"
+   "version" : "1.101420"
 }
 

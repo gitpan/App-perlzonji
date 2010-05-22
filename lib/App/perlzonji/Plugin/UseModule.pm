@@ -4,7 +4,7 @@ use warnings;
 
 package App::perlzonji::Plugin::UseModule;
 BEGIN {
-  $App::perlzonji::Plugin::UseModule::VERSION = '1.101000';
+  $App::perlzonji::Plugin::UseModule::VERSION = '1.101420';
 }
 
 # ABSTRACT: Plugin to try the search word as a module name
@@ -39,7 +39,7 @@ App::perlzonji::Plugin::UseModule - Plugin to try the search word as a module na
 
 =head1 VERSION
 
-version 1.101000
+version 1.101420
 
 =head1 SYNOPSIS
 

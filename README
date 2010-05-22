@@ -2,7 +2,7 @@ NAME
     App::perlzonji - A more knowledgeable perldoc
 
 VERSION
-    version 1.101000
+    version 1.101420
 
 SYNOPSIS
         # perlzonji UNIVERSAL::isa

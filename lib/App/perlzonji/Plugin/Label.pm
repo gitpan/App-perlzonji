@@ -4,7 +4,7 @@ use warnings;
 
 package App::perlzonji::Plugin::Label;
 BEGIN {
-  $App::perlzonji::Plugin::Label::VERSION = '1.101000';
+  $App::perlzonji::Plugin::Label::VERSION = '1.101420';
 }
 
 # ABSTRACT: Plugin for labels
@@ -30,7 +30,7 @@ App::perlzonji::Plugin::Label - Plugin for labels
 
 =head1 VERSION
 
-version 1.101000
+version 1.101420
 
 =head1 SYNOPSIS
 

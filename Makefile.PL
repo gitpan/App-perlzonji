@@ -30,11 +30,12 @@ my %WriteMakefileArgs = (
                        'EXE_FILES' => [
                                         'bin/perlzonji'
                                       ],
-                       'VERSION' => '1.101000',
+                       'VERSION' => '1.101420',
                        'PREREQ_PM' => {
                                         'Module::Pluggable' => '0',
-                                        'Class::Trigger' => '0',
-                                        'Pod::Usage::CommandLine' => '0'
+                                        'Getopt::Long' => '0',
+                                        'Pod::Usage' => '0',
+                                        'Class::Trigger' => '0'
                                       },
                        'LICENSE' => 'perl'
                      );
