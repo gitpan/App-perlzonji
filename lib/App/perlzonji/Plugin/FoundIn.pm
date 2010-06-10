@@ -4,7 +4,7 @@ use warnings;
 
 package App::perlzonji::Plugin::FoundIn;
 BEGIN {
-  $App::perlzonji::Plugin::FoundIn::VERSION = '1.101420';
+  $App::perlzonji::Plugin::FoundIn::VERSION = '1.101610';
 }
 
 # ABSTRACT: Plugin to find documentation for syntax and concepts
@@ -121,7 +121,7 @@ App::perlzonji::Plugin::FoundIn - Plugin to find documentation for syntax and co
 
 =head1 VERSION
 
-version 1.101420
+version 1.101610
 
 =head1 SYNOPSIS
 
@@ -152,7 +152,7 @@ See perlmodinstall for information and options on installing Perl modules.
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji>.
+L<http://rt.cpan.org>.
 
 =head1 AVAILABILITY
 

@@ -1,14 +1,29 @@
 
 This is the Perl distribution App-perlzonji.
 
-## Installation
+Installing App-perlzonji is straightforward.
 
-App-perlzonji installation is straightforward.
-If your CPAN shell is set up, you should just be able to do
+## Installation with cpanm
+
+If you have cpanm, you only need one line:
+
+    % cpanm App::perlzonji
+
+If you are installing into a system-wide directory, you may need to pass the
+"-S" flag to cpanm, which uses sudo to install the module:
+
+    % cpanm -S App::perlzonji
+
+## Installing with the CPAN shell
+
+Alternatively, if your CPAN shell is set up, you should just be able to do:
 
     % cpan App::perlzonji
 
-Download it, unpack it, then build it as per the usual:
+## Manual installation
+
+As a last resort, you can manually install it. Download the tarball, untar it,
+then build it:
 
     % perl Makefile.PL
     % make && make test
@@ -17,11 +32,13 @@ Then install it:
 
     % make install
 
+If you are installing into a system-wide directory, you may need to run:
+
+    % sudo make install
+
 ## Documentation
 
-App-perlzonji documentation is available as in POD.
-So you can do:
+App-perlzonji documentation is available as POD.
+You can run perldoc from a shell to read the documentation:
 
     % perldoc App::perlzonji
-
-to read the documentation with your favorite pager.

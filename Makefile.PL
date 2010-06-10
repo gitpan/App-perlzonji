@@ -9,40 +9,51 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-                       'test' => {
-                                   'TESTS' => 't/*.t'
-                                 },
-                       'NAME' => 'App::perlzonji',
-                       'DISTNAME' => 'App-perlzonji',
-                       'CONFIGURE_REQUIRES' => {
-                                                 'ExtUtils::MakeMaker' => '6.31'
-                                               },
-                       'AUTHOR' => 'Marcel Gruenauer <marcel@cpan.org>',
-                       'BUILD_REQUIRES' => {
-                                             'Test::More' => '0.94',
-                                             'Scalar::Util' => '0',
-                                             'English' => '0',
-                                             'File::Find' => '0',
-                                             'File::Temp' => '0',
-                                             'Carp' => '0'
-                                           },
-                       'ABSTRACT' => 'A more knowledgeable perldoc',
-                       'EXE_FILES' => [
-                                        'bin/perlzonji'
-                                      ],
-                       'VERSION' => '1.101420',
-                       'PREREQ_PM' => {
-                                        'Module::Pluggable' => '0',
-                                        'Getopt::Long' => '0',
-                                        'Pod::Usage' => '0',
-                                        'Class::Trigger' => '0'
-                                      },
-                       'LICENSE' => 'perl'
-                     );
+  'ABSTRACT' => 'A more knowledgeable perldoc',
+  'AUTHOR' => 'Marcel Gruenauer <marcel@cpan.org>',
+  'BUILD_REQUIRES' => {
+    'Capture::Tiny' => '0',
+    'Carp' => '0',
+    'English' => '0',
+    'File::Find' => '0',
+    'File::Temp' => '0',
+    'Scalar::Util' => '0',
+    'Test::More' => '0.94'
+  },
+  'CONFIGURE_REQUIRES' => {
+    'ExtUtils::MakeMaker' => '6.31'
+  },
+  'DISTNAME' => 'App-perlzonji',
+  'EXE_FILES' => [
+    'bin/perlzonji'
+  ],
+  'LICENSE' => 'perl',
+  'NAME' => 'App::perlzonji',
+  'PREREQ_PM' => {
+    'Class::Trigger' => '0',
+    'Getopt::Long' => '0',
+    'Module::Pluggable' => '0',
+    'Pod::Usage' => '0'
+  },
+  'VERSION' => '1.101610',
+  'test' => {
+    'TESTS' => 't/*.t'
+  }
+);
 
 
-delete $WriteMakefileArgs{BUILD_REQUIRES}
-  unless eval { ExtUtils::MakeMaker->VERSION(6.56) };
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
+  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
+  my $pp = $WriteMakefileArgs{PREREQ_PM};
+  for my $mod ( keys %$br ) {
+    if ( exists $pp->{$mod} ) {
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
+    }
+    else {
+      $pp->{$mod} = $br->{$mod};
+    }
+  }
+}
 
 delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
   unless eval { ExtUtils::MakeMaker->VERSION(6.52) };

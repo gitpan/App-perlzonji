@@ -4,7 +4,7 @@ use warnings;
 
 package App::perlzonji::Plugin::Label;
 BEGIN {
-  $App::perlzonji::Plugin::Label::VERSION = '1.101420';
+  $App::perlzonji::Plugin::Label::VERSION = '1.101610';
 }
 
 # ABSTRACT: Plugin for labels
@@ -30,7 +30,7 @@ App::perlzonji::Plugin::Label - Plugin for labels
 
 =head1 VERSION
 
-version 1.101420
+version 1.101610
 
 =head1 SYNOPSIS
 
@@ -51,7 +51,7 @@ See perlmodinstall for information and options on installing Perl modules.
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji>.
+L<http://rt.cpan.org>.
 
 =head1 AVAILABILITY
 

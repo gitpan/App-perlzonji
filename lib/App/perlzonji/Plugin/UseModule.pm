@@ -4,7 +4,7 @@ use warnings;
 
 package App::perlzonji::Plugin::UseModule;
 BEGIN {
-  $App::perlzonji::Plugin::UseModule::VERSION = '1.101420';
+  $App::perlzonji::Plugin::UseModule::VERSION = '1.101610';
 }
 
 # ABSTRACT: Plugin to try the search word as a module name
@@ -39,7 +39,7 @@ App::perlzonji::Plugin::UseModule - Plugin to try the search word as a module na
 
 =head1 VERSION
 
-version 1.101420
+version 1.101610
 
 =head1 SYNOPSIS
 
@@ -62,7 +62,7 @@ See perlmodinstall for information and options on installing Perl modules.
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji>.
+L<http://rt.cpan.org>.
 
 =head1 AVAILABILITY
 

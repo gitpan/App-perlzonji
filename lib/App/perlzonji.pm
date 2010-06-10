@@ -4,7 +4,7 @@ use warnings;
 
 package App::perlzonji;
 BEGIN {
-  $App::perlzonji::VERSION = '1.101420';
+  $App::perlzonji::VERSION = '1.101610';
 }
 
 # ABSTRACT: A more knowledgeable perldoc
@@ -12,11 +12,12 @@ use Getopt::Long;
 use Pod::Usage;
 use Class::Trigger;
 use Module::Pluggable require => 1;
-__PACKAGE__->plugins;  # 'require' them
+__PACKAGE__->plugins;    # 'require' them
 
 sub run {
     our %opt = ('perldoc-command' => 'perldoc');
-    GetOptions(\%opt, qw(help|h|? man|m perldoc-command:s debug)) or pod2usage(2);
+    GetOptions(\%opt, qw(help|h|? man|m perldoc-command|c:s debug dry-run|n))
+      or pod2usage(2);
     if ($opt{help}) {
         pod2usage(
             -exitstatus => 0,
@@ -31,28 +32,35 @@ sub run {
         );
     }
     my $word = shift @ARGV;
-
     my @matches;
     __PACKAGE__->call_trigger('matches.add', $word, \@matches);
     if (@matches) {
         if (@matches > 1) {
-            warn sprintf "%s matches for [%s], using first (%s):\n", scalar(@matches), $word, $matches[0];
+            warn sprintf "%s matches for [%s], using first (%s):\n",
+              scalar(@matches), $word, $matches[0];
             warn "    $_\n" for @matches;
         }
         execute($opt{'perldoc-command'}, $matches[0]);
     }
 
     # fallback
-    warn "assuming that [$word] is a built-in function\n";
+    warn "assuming that [$word] is a built-in function\n" if $opt{debug};
     execute($opt{'perldoc-command'}, qw(-f), $word);
 }
 
 sub execute {
     our %opt;
-    print "@_\n" if $opt{debug};
-    exec @_;
-}
+    if ($opt{'dry-run'}) {
 
+        # under --dry-run, don't pretend to execute more than once
+        our $executed;
+        return if $executed++;
+        warn "@_\n";
+    } else {
+        warn "@_\n" if $opt{debug};
+        exec @_;
+    }
+}
 1;
 
 
@@ -67,7 +75,7 @@ App::perlzonji - A more knowledgeable perldoc
 
 =head1 VERSION
 
-version 1.101420
+version 1.101610
 
 =head1 SYNOPSIS
 
@@ -120,7 +128,7 @@ Options can be shortened according to L<Getopt::Long/"Case and abbreviations">.
 
 =over
 
-=item C<--perldoc-command>
+=item C<--perldoc-command>, C<-c>
 
 Specifies the POD formatter/pager to delegate to. Default is C<perldoc>.
 C<annopod> from L<AnnoCPAN::Perldoc> is a better alternative.
@@ -129,11 +137,15 @@ C<annopod> from L<AnnoCPAN::Perldoc> is a better alternative.
 
 Prints the whole command before executing it.
 
-=item C<--help>
+=item C<--dry-run>, C<-n>
+
+Just print the command that would be executed; don't actually execute it.
+
+=item C<--help>, C<-h>, C<-?>
 
 Prints a brief help message and exits.
 
-=item C<--man>
+=item C<--man>, C<-m>
 
 Prints the manual page and exits.
 
@@ -148,7 +160,7 @@ See perlmodinstall for information and options on installing Perl modules.
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji>.
+L<http://rt.cpan.org>.
 
 =head1 AVAILABILITY
 

@@ -3,59 +3,76 @@
    "author" : [
       "Marcel Gruenauer <marcel@cpan.org>"
    ],
-   "build_requires" : {
-      "Carp" : "0",
-      "English" : "0",
-      "File::Find" : "0",
-      "File::Temp" : "0",
-      "Scalar::Util" : "0",
-      "Test::More" : "0.94"
-   },
-   "configure_requires" : {
-      "ExtUtils::MakeMaker" : "6.31"
-   },
-   "generated_by" : "Dist::Zilla version 2.100960",
-   "license" : "perl",
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.101582, CPAN::Meta::Converter version 2.101591",
+   "license" : [
+      "perl_5"
+   ],
    "meta-spec" : {
-      "url" : "http://module-build.sourceforge.net/META-spec-v1.4.html",
-      "version" : 1.4
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
    },
    "name" : "App-perlzonji",
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.31"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Class::Trigger" : 0,
+            "Getopt::Long" : 0,
+            "Module::Pluggable" : 0,
+            "Pod::Usage" : 0,
+            "perl" : "5.008"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Capture::Tiny" : 0,
+            "Carp" : 0,
+            "English" : 0,
+            "File::Find" : 0,
+            "File::Temp" : 0,
+            "Scalar::Util" : 0,
+            "Test::More" : "0.94"
+         }
+      }
+   },
    "provides" : {
       "App::perlzonji" : {
          "file" : "lib/App/perlzonji.pm",
-         "version" : "1.101420"
+         "version" : "1.101610"
       },
       "App::perlzonji::Plugin::FoundIn" : {
          "file" : "lib/App/perlzonji/Plugin/FoundIn.pm",
-         "version" : "1.101420"
+         "version" : "1.101610"
       },
       "App::perlzonji::Plugin::Label" : {
          "file" : "lib/App/perlzonji/Plugin/Label.pm",
-         "version" : "1.101420"
+         "version" : "1.101610"
       },
       "App::perlzonji::Plugin::SpecialPackages" : {
          "file" : "lib/App/perlzonji/Plugin/SpecialPackages.pm",
-         "version" : "1.101420"
+         "version" : "1.101610"
       },
       "App::perlzonji::Plugin::UseModule" : {
          "file" : "lib/App/perlzonji/Plugin/UseModule.pm",
-         "version" : "1.101420"
+         "version" : "1.101610"
       }
    },
-   "recommends" : {},
-   "requires" : {
-      "Class::Trigger" : "0",
-      "Getopt::Long" : "0",
-      "Module::Pluggable" : "0",
-      "Pod::Usage" : "0",
-      "perl" : "5.008"
-   },
+   "release_status" : "stable",
    "resources" : {
-      "bugtracker" : "http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji",
+      "bugtracker" : {
+         "mailto" : "bug-app-perlzonji at rt.cpan.org",
+         "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji"
+      },
       "homepage" : "http://search.cpan.org/dist/App-perlzonji/",
-      "repository" : "http://github.com/hanekomu/App-perlzonji"
+      "repository" : {
+         "url" : "http://github.com/hanekomu/App-perlzonji"
+      }
    },
-   "version" : "1.101420"
+   "version" : "1.101610"
 }
 

@@ -2,7 +2,7 @@ NAME
     App::perlzonji - A more knowledgeable perldoc
 
 VERSION
-    version 1.101420
+    version 1.101610
 
 SYNOPSIS
         # perlzonji UNIVERSAL::isa
@@ -48,17 +48,21 @@ OPTIONS
     Options can be shortened according to "Case and abbreviations" in
     Getopt::Long.
 
-    "--perldoc-command"
+    "--perldoc-command", "-c"
         Specifies the POD formatter/pager to delegate to. Default is
         "perldoc". "annopod" from AnnoCPAN::Perldoc is a better alternative.
 
     "--debug"
         Prints the whole command before executing it.
 
-    "--help"
+    "--dry-run", "-n"
+        Just print the command that would be executed; don't actually
+        execute it.
+
+    "--help", "-h", "-?"
         Prints a brief help message and exits.
 
-    "--man"
+    "--man", "-m"
         Prints the manual page and exits.
 
 INSTALLATION
@@ -69,7 +73,7 @@ BUGS AND LIMITATIONS
     No bugs have been reported.
 
     Please report any bugs or feature requests through the web interface at
-    <http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji>.
+    <http://rt.cpan.org>.
 
 AVAILABILITY
     The latest version of this module is available from the Comprehensive
