@@ -4,7 +4,7 @@ use warnings;
 
 package App::perlzonji::Plugin::Label;
 BEGIN {
-  $App::perlzonji::Plugin::Label::VERSION = '1.101610';
+  $App::perlzonji::Plugin::Label::VERSION = '1.111470';
 }
 
 # ABSTRACT: Plugin for labels
@@ -30,7 +30,7 @@ App::perlzonji::Plugin::Label - Plugin for labels
 
 =head1 VERSION
 
-version 1.101610
+version 1.111470
 
 =head1 SYNOPSIS
 
@@ -51,23 +51,32 @@ See perlmodinstall for information and options on installing Perl modules.
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
+L<http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji>.
 
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
-site near you, or see
-L<http://search.cpan.org/dist/App-perlzonji/>.
+site near you, or see L<http://search.cpan.org/dist/App-perlzonji/>.
 
-The development version lives at
-L<http://github.com/hanekomu/App-perlzonji/>.
-Instead of sending patches, please fork this project using the standard git
-and github infrastructure.
+The development version lives at L<http://github.com/hanekomu/App-perlzonji>
+and may be cloned from L<git://github.com/hanekomu/App-perlzonji.git>.
+Instead of sending patches, please fork this project using the standard
+git and github infrastructure.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
-  Marcel Gruenauer <marcel@cpan.org>
+=over 4
+
+=item *
+
+Marcel Gruenauer <marcel@cpan.org>
+
+=item *
+
+Leo Lapworth <LLAP@cuckoo.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

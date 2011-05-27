@@ -2,15 +2,15 @@
 use strict;
 use warnings;
 
- BEGIN { require 5.008; } 
+BEGIN { require 5.008; }
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
   'ABSTRACT' => 'A more knowledgeable perldoc',
-  'AUTHOR' => 'Marcel Gruenauer <marcel@cpan.org>',
+  'AUTHOR' => 'Marcel Gruenauer <marcel@cpan.org>, Leo Lapworth <LLAP@cuckoo.org>',
   'BUILD_REQUIRES' => {
     'Capture::Tiny' => '0',
     'Carp' => '0',
@@ -21,7 +21,7 @@ my %WriteMakefileArgs = (
     'Test::More' => '0.94'
   },
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.30'
   },
   'DISTNAME' => 'App-perlzonji',
   'EXE_FILES' => [
@@ -35,7 +35,7 @@ my %WriteMakefileArgs = (
     'Module::Pluggable' => '0',
     'Pod::Usage' => '0'
   },
-  'VERSION' => '1.101610',
+  'VERSION' => '1.111470',
   'test' => {
     'TESTS' => 't/*.t'
   }

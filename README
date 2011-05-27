@@ -2,7 +2,7 @@ NAME
     App::perlzonji - A more knowledgeable perldoc
 
 VERSION
-    version 1.101610
+    version 1.111470
 
 SYNOPSIS
         # perlzonji UNIVERSAL::isa
@@ -44,13 +44,19 @@ FUNCTIONS
     Executes the given command using "exec()". In debug mode, it also prints
     the command before executing it.
 
+  find_matches
+    Takes a word and returns the matches for that word. It's in a separate
+    function to separate logic from presentation so other programs can use
+    this module as well.
+
 OPTIONS
     Options can be shortened according to "Case and abbreviations" in
     Getopt::Long.
 
     "--perldoc-command", "-c"
-        Specifies the POD formatter/pager to delegate to. Default is
-        "perldoc". "annopod" from AnnoCPAN::Perldoc is a better alternative.
+        Specifies the POD formatter/pager to delegate to. Default is .
+        "perldoc" "annopod" from AnnoCPAN::Perldoc is a better . alternative
+        .
 
     "--debug"
         Prints the whole command before executing it.
@@ -73,7 +79,7 @@ BUGS AND LIMITATIONS
     No bugs have been reported.
 
     Please report any bugs or feature requests through the web interface at
-    <http://rt.cpan.org>.
+    <http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji>.
 
 AVAILABILITY
     The latest version of this module is available from the Comprehensive
@@ -81,12 +87,15 @@ AVAILABILITY
     CPAN site near you, or see <http://search.cpan.org/dist/App-perlzonji/>.
 
     The development version lives at
-    <http://github.com/hanekomu/App-perlzonji/>. Instead of sending patches,
-    please fork this project using the standard git and github
+    <http://github.com/hanekomu/App-perlzonji> and may be cloned from
+    <git://github.com/hanekomu/App-perlzonji.git>. Instead of sending
+    patches, please fork this project using the standard git and github
     infrastructure.
 
-AUTHOR
-      Marcel Gruenauer <marcel@cpan.org>
+AUTHORS
+    *   Marcel Gruenauer <marcel@cpan.org>
+
+    *   Leo Lapworth <LLAP@cuckoo.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2010 by Marcel Gruenauer.

@@ -1,10 +1,11 @@
 {
    "abstract" : "A more knowledgeable perldoc",
    "author" : [
-      "Marcel Gruenauer <marcel@cpan.org>"
+      "Marcel Gruenauer <marcel@cpan.org>",
+      "Leo Lapworth <LLAP@cuckoo.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.101582, CPAN::Meta::Converter version 2.101591",
+   "generated_by" : "Dist::Zilla version 4.200006, CPAN::Meta::Converter version 2.110930",
    "license" : [
       "perl_5"
    ],
@@ -16,7 +17,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.31"
+            "ExtUtils::MakeMaker" : "6.30"
          }
       },
       "runtime" : {
@@ -43,23 +44,23 @@
    "provides" : {
       "App::perlzonji" : {
          "file" : "lib/App/perlzonji.pm",
-         "version" : "1.101610"
+         "version" : "1.111470"
       },
       "App::perlzonji::Plugin::FoundIn" : {
          "file" : "lib/App/perlzonji/Plugin/FoundIn.pm",
-         "version" : "1.101610"
+         "version" : "1.111470"
       },
       "App::perlzonji::Plugin::Label" : {
          "file" : "lib/App/perlzonji/Plugin/Label.pm",
-         "version" : "1.101610"
+         "version" : "1.111470"
       },
       "App::perlzonji::Plugin::SpecialPackages" : {
          "file" : "lib/App/perlzonji/Plugin/SpecialPackages.pm",
-         "version" : "1.101610"
+         "version" : "1.111470"
       },
       "App::perlzonji::Plugin::UseModule" : {
          "file" : "lib/App/perlzonji/Plugin/UseModule.pm",
-         "version" : "1.101610"
+         "version" : "1.111470"
       }
    },
    "release_status" : "stable",
@@ -70,9 +71,11 @@
       },
       "homepage" : "http://search.cpan.org/dist/App-perlzonji/",
       "repository" : {
-         "url" : "http://github.com/hanekomu/App-perlzonji"
+         "type" : "git",
+         "url" : "git://github.com/hanekomu/App-perlzonji.git",
+         "web" : "http://github.com/hanekomu/App-perlzonji"
       }
    },
-   "version" : "1.101610"
+   "version" : "1.111470"
 }
 

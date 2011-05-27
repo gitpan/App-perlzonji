@@ -4,7 +4,7 @@ use warnings;
 
 package App::perlzonji;
 BEGIN {
-  $App::perlzonji::VERSION = '1.101610';
+  $App::perlzonji::VERSION = '1.111470';
 }
 
 # ABSTRACT: A more knowledgeable perldoc
@@ -31,21 +31,27 @@ sub run {
             -verbose    => 2
         );
     }
-    my $word = shift @ARGV;
-    my @matches;
-    __PACKAGE__->call_trigger('matches.add', $word, \@matches);
-    if (@matches) {
-        if (@matches > 1) {
+    my $word    = shift @ARGV;
+    my $matches = find_matches($word);
+    if (@$matches) {
+        if (@$matches > 1) {
             warn sprintf "%s matches for [%s], using first (%s):\n",
-              scalar(@matches), $word, $matches[0];
-            warn "    $_\n" for @matches;
+              scalar(@$matches), $word, $matches->[0];
+            warn "    $_\n" for @$matches;
         }
-        execute($opt{'perldoc-command'}, $matches[0]);
+        execute($opt{'perldoc-command'}, $matches->[0]);
     }
 
     # fallback
     warn "assuming that [$word] is a built-in function\n" if $opt{debug};
     execute($opt{'perldoc-command'}, qw(-f), $word);
+}
+
+sub find_matches {
+    my $word = shift;
+    my @matches;
+    __PACKAGE__->call_trigger('matches.add', $word, \@matches);
+    return \@matches;
 }
 
 sub execute {
@@ -75,7 +81,7 @@ App::perlzonji - A more knowledgeable perldoc
 
 =head1 VERSION
 
-version 1.101610
+version 1.111470
 
 =head1 SYNOPSIS
 
@@ -101,9 +107,9 @@ C<perlzonji> is like C<perldoc> except it knows about more things. Try these:
 
 For efficiency, C<alias pod=perlzonji>.
 
-The word C<zonji> means "knowledge of" in Japanese. Another example is the
-question "gozonji desu ka", meaning "Do you know?" - "go" is a prefix added
-for politeness.
+The word C<zonji> means "knowledge of" in Japanese. Another example
+is the question "gozonji desu ka", meaning "Do you know?" - "go" is a
+prefix added for politeness.
 
 =head1 FUNCTIONS
 
@@ -113,25 +119,33 @@ The main function, which is called by the C<perlzonji> program.
 
 =head2 try_module
 
-Takes as argument the name of a module, tries to load that module and executes
-the formatter, giving that module as an argument. If loading the module fails,
-this subroutine does nothing.
+Takes as argument the name of a module, tries to load that module and
+executes the formatter, giving that module as an argument. If loading
+the module fails, this subroutine does nothing.
 
 =head2 execute
 
-Executes the given command using C<exec()>. In debug mode, it also prints the
-command before executing it.
+Executes the given command using C<exec()>. In debug mode, it also
+prints the command before executing it.
+
+=head2 find_matches
+
+Takes a word and returns the matches for that word. It's in a separate
+function to separate logic from presentation so other programs can use
+this module as well.
 
 =head1 OPTIONS
 
-Options can be shortened according to L<Getopt::Long/"Case and abbreviations">.
+Options can be shortened according to L<Getopt::Long/"Case and
+abbreviations">.
 
 =over
 
 =item C<--perldoc-command>, C<-c>
 
-Specifies the POD formatter/pager to delegate to. Default is C<perldoc>.
-C<annopod> from L<AnnoCPAN::Perldoc> is a better alternative.
+Specifies the POD formatter/pager to delegate to. Default is         .
+C<perldoc> C<annopod> from L<AnnoCPAN::Perldoc> is a better          .
+alternative                                                          .
 
 =item C<--debug>
 
@@ -139,7 +153,8 @@ Prints the whole command before executing it.
 
 =item C<--dry-run>, C<-n>
 
-Just print the command that would be executed; don't actually execute it.
+Just print the command that would be executed; don't actually execute
+it.
 
 =item C<--help>, C<-h>, C<-?>
 
@@ -160,23 +175,32 @@ See perlmodinstall for information and options on installing Perl modules.
 No bugs have been reported.
 
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org>.
+L<http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji>.
 
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
-site near you, or see
-L<http://search.cpan.org/dist/App-perlzonji/>.
+site near you, or see L<http://search.cpan.org/dist/App-perlzonji/>.
 
-The development version lives at
-L<http://github.com/hanekomu/App-perlzonji/>.
-Instead of sending patches, please fork this project using the standard git
-and github infrastructure.
+The development version lives at L<http://github.com/hanekomu/App-perlzonji>
+and may be cloned from L<git://github.com/hanekomu/App-perlzonji.git>.
+Instead of sending patches, please fork this project using the standard
+git and github infrastructure.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
-  Marcel Gruenauer <marcel@cpan.org>
+=over 4
+
+=item *
+
+Marcel Gruenauer <marcel@cpan.org>
+
+=item *
+
+Leo Lapworth <LLAP@cuckoo.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
