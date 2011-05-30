@@ -35,7 +35,7 @@ my %WriteMakefileArgs = (
     'Module::Pluggable' => '0',
     'Pod::Usage' => '0'
   },
-  'VERSION' => '1.111470',
+  'VERSION' => '1.111500',
   'test' => {
     'TESTS' => 't/*.t'
   }

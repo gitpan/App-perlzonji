@@ -4,7 +4,7 @@ use warnings;
 
 package App::perlzonji::Plugin::SpecialPackages;
 BEGIN {
-  $App::perlzonji::Plugin::SpecialPackages::VERSION = '1.111470';
+  $App::perlzonji::Plugin::SpecialPackages::VERSION = '1.111500';
 }
 
 # ABSTRACT: Plugin to find documentation for special Perl packages
@@ -28,7 +28,7 @@ App::perlzonji::Plugin::SpecialPackages - Plugin to find documentation for speci
 
 =head1 VERSION
 
-version 1.111470
+version 1.111500
 
 =head1 SYNOPSIS
 

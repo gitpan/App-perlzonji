@@ -4,7 +4,7 @@ use warnings;
 
 package App::perlzonji::Plugin::FoundIn;
 BEGIN {
-  $App::perlzonji::Plugin::FoundIn::VERSION = '1.111470';
+  $App::perlzonji::Plugin::FoundIn::VERSION = '1.111500';
 }
 
 # ABSTRACT: Plugin to find documentation for syntax and concepts
@@ -22,7 +22,8 @@ our %found_in = (
     ],
     perlsyn => [qw(if else elsif unless while until for foreach)],
     perlobj => [qw(isa ISA can VERSION)],
-    perlsub => [qw(AUTOLOAD BEGIN CHECK INIT END DESTROY)],
+    perlsub => [qw(AUTOLOAD DESTROY)],
+    perlmod => [qw(BEGIN UNITCHECK CHECK INIT END)],
     perltie => [
         qw(TIESCALAR TIEARRAY TIEHASH TIEHANDLE FETCH STORE UNTIE
           FETCHSIZE STORESIZE POP PUSH SHIFT UNSHIFT SPLICE DELETE EXISTS
@@ -121,7 +122,7 @@ App::perlzonji::Plugin::FoundIn - Plugin to find documentation for syntax and co
 
 =head1 VERSION
 
-version 1.111470
+version 1.111500
 
 =head1 SYNOPSIS
 

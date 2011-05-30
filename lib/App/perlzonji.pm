@@ -4,7 +4,7 @@ use warnings;
 
 package App::perlzonji;
 BEGIN {
-  $App::perlzonji::VERSION = '1.111470';
+  $App::perlzonji::VERSION = '1.111500';
 }
 
 # ABSTRACT: A more knowledgeable perldoc
@@ -81,7 +81,7 @@ App::perlzonji - A more knowledgeable perldoc
 
 =head1 VERSION
 
-version 1.111470
+version 1.111500
 
 =head1 SYNOPSIS
 

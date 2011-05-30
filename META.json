@@ -44,23 +44,23 @@
    "provides" : {
       "App::perlzonji" : {
          "file" : "lib/App/perlzonji.pm",
-         "version" : "1.111470"
+         "version" : "1.111500"
       },
       "App::perlzonji::Plugin::FoundIn" : {
          "file" : "lib/App/perlzonji/Plugin/FoundIn.pm",
-         "version" : "1.111470"
+         "version" : "1.111500"
       },
       "App::perlzonji::Plugin::Label" : {
          "file" : "lib/App/perlzonji/Plugin/Label.pm",
-         "version" : "1.111470"
+         "version" : "1.111500"
       },
       "App::perlzonji::Plugin::SpecialPackages" : {
          "file" : "lib/App/perlzonji/Plugin/SpecialPackages.pm",
-         "version" : "1.111470"
+         "version" : "1.111500"
       },
       "App::perlzonji::Plugin::UseModule" : {
          "file" : "lib/App/perlzonji/Plugin/UseModule.pm",
-         "version" : "1.111470"
+         "version" : "1.111500"
       }
    },
    "release_status" : "stable",
@@ -76,6 +76,6 @@
          "web" : "http://github.com/hanekomu/App-perlzonji"
       }
    },
-   "version" : "1.111470"
+   "version" : "1.111500"
 }
 
