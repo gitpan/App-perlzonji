@@ -1,18 +1,15 @@
+package App::perlzonji;
 use 5.008;
 use strict;
 use warnings;
 
-package App::perlzonji;
-BEGIN {
-  $App::perlzonji::VERSION = '1.111500';
-}
-
-# ABSTRACT: A more knowledgeable perldoc
 use Getopt::Long;
 use Pod::Usage;
 use Class::Trigger;
 use Module::Pluggable require => 1;
 __PACKAGE__->plugins;    # 'require' them
+
+our $VERSION = '1.20';
 
 sub run {
     our %opt = ('perldoc-command' => 'perldoc');
@@ -69,19 +66,12 @@ sub execute {
 }
 1;
 
-
 __END__
 =pod
-
-=for stopwords Dieckow gozonji desu ka
 
 =head1 NAME
 
 App::perlzonji - A more knowledgeable perldoc
-
-=head1 VERSION
-
-version 1.111500
 
 =head1 SYNOPSIS
 
@@ -99,6 +89,7 @@ C<perlzonji> is like C<perldoc> except it knows about more things. Try these:
     perlzonji TIEARRAY
     perlzonji INPUT_RECORD_SEPARATOR
     perlzonji '$^F'
+    perlzonji '\Q'
     perlzonji PERL5OPT
     perlzonji :mmap
     perlzonji __WARN__
@@ -106,10 +97,6 @@ C<perlzonji> is like C<perldoc> except it knows about more things. Try these:
     perlzonji head4
 
 For efficiency, C<alias pod=perlzonji>.
-
-The word C<zonji> means "knowledge of" in Japanese. Another example
-is the question "gozonji desu ka", meaning "Do you know?" - "go" is a
-prefix added for politeness.
 
 =head1 FUNCTIONS
 
@@ -143,9 +130,9 @@ abbreviations">.
 
 =item C<--perldoc-command>, C<-c>
 
-Specifies the POD formatter/pager to delegate to. Default is         .
-C<perldoc> C<annopod> from L<AnnoCPAN::Perldoc> is a better          .
-alternative                                                          .
+Specifies the POD formatter/pager to delegate to. Default is
+C<perldoc> C<annopod> from L<AnnoCPAN::Perldoc> is a better
+alternative.
 
 =item C<--debug>
 
@@ -166,48 +153,24 @@ Prints the manual page and exits.
 
 =back
 
-=head1 INSTALLATION
-
-See perlmodinstall for information and options on installing Perl modules.
-
-=head1 BUGS AND LIMITATIONS
-
-No bugs have been reported.
-
-Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji>.
-
-=head1 AVAILABILITY
-
-The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
-site near you, or see L<http://search.cpan.org/dist/App-perlzonji/>.
-
-The development version lives at L<http://github.com/hanekomu/App-perlzonji>
-and may be cloned from L<git://github.com/hanekomu/App-perlzonji.git>.
-Instead of sending patches, please fork this project using the standard
-git and github infrastructure.
-
 =head1 AUTHORS
 
-=over 4
+The following persons are the authors of all the files provided in
+this distribution unless explicitly noted otherwise.
 
-=item *
+Marcel Gruenauer <marcel@cpan.org>, L<http://perlservices.at>
 
-Marcel Gruenauer <marcel@cpan.org>
-
-=item *
+Lars Dieckow <daxim@cpan.org>
 
 Leo Lapworth <LLAP@cuckoo.org>
 
-=back
-
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Marcel Gruenauer.
+The following copyright notice applies to all the files provided in
+this distribution, including binary files, unless explicitly noted
+otherwise.
+
+This software is copyright (c) 2011 by Marcel Gruenauer.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
-
-=cut
-

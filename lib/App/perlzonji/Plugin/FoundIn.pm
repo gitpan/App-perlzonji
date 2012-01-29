@@ -1,13 +1,7 @@
+package App::perlzonji::Plugin::FoundIn;
 use 5.008;
 use strict;
 use warnings;
-
-package App::perlzonji::Plugin::FoundIn;
-BEGIN {
-  $App::perlzonji::Plugin::FoundIn::VERSION = '1.111500';
-}
-
-# ABSTRACT: Plugin to find documentation for syntax and concepts
 use App::perlzonji;
 
 # Specify like this because it's easier. We compute the reverse later (i.e.,
@@ -18,7 +12,7 @@ use App::perlzonji;
 our %found_in = (
     perlop => [
         qw(lt gt le ge eq ne cmp not and or xor s m tr y
-          q qq qr qx qw)
+          q qq qr qx qw \l \u \L \U \Q \E)
     ],
     perlsyn => [qw(if else elsif unless while until for foreach)],
     perlobj => [qw(isa ISA can VERSION)],
@@ -111,18 +105,13 @@ App::perlzonji->add_trigger(
     }
 );
 1;
-
-
 __END__
+
 =pod
 
 =head1 NAME
 
 App::perlzonji::Plugin::FoundIn - Plugin to find documentation for syntax and concepts
-
-=head1 VERSION
-
-version 1.111500
 
 =head1 SYNOPSIS
 
@@ -143,49 +132,4 @@ and built-in Perl concepts. It knows about things like
     head3
     __DATA__
     :utf8
-
-=head1 INSTALLATION
-
-See perlmodinstall for information and options on installing Perl modules.
-
-=head1 BUGS AND LIMITATIONS
-
-No bugs have been reported.
-
-Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji>.
-
-=head1 AVAILABILITY
-
-The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
-site near you, or see L<http://search.cpan.org/dist/App-perlzonji/>.
-
-The development version lives at L<http://github.com/hanekomu/App-perlzonji>
-and may be cloned from L<git://github.com/hanekomu/App-perlzonji.git>.
-Instead of sending patches, please fork this project using the standard
-git and github infrastructure.
-
-=head1 AUTHORS
-
-=over 4
-
-=item *
-
-Marcel Gruenauer <marcel@cpan.org>
-
-=item *
-
-Leo Lapworth <LLAP@cuckoo.org>
-
-=back
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2010 by Marcel Gruenauer.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
 

@@ -2,7 +2,6 @@
 abstract: 'A more knowledgeable perldoc'
 author:
   - 'Marcel Gruenauer <marcel@cpan.org>'
-  - 'Leo Lapworth <LLAP@cuckoo.org>'
 build_requires:
   Capture::Tiny: 0
   Carp: 0
@@ -12,38 +11,25 @@ build_requires:
   Scalar::Util: 0
   Test::More: 0.94
 configure_requires:
-  ExtUtils::MakeMaker: 6.30
-dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200006, CPAN::Meta::Converter version 2.110930'
+  ExtUtils::MakeMaker: 6.58
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.113640'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: App-perlzonji
-provides:
-  App::perlzonji:
-    file: lib/App/perlzonji.pm
-    version: 1.111500
-  App::perlzonji::Plugin::FoundIn:
-    file: lib/App/perlzonji/Plugin/FoundIn.pm
-    version: 1.111500
-  App::perlzonji::Plugin::Label:
-    file: lib/App/perlzonji/Plugin/Label.pm
-    version: 1.111500
-  App::perlzonji::Plugin::SpecialPackages:
-    file: lib/App/perlzonji/Plugin/SpecialPackages.pm
-    version: 1.111500
-  App::perlzonji::Plugin::UseModule:
-    file: lib/App/perlzonji/Plugin/UseModule.pm
-    version: 1.111500
+no_index:
+  directory:
+    - t
+    - inc
 requires:
   Class::Trigger: 0
   Getopt::Long: 0
   Module::Pluggable: 0
   Pod::Usage: 0
-  perl: 5.008
-resources:
-  bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=App-perlzonji
-  homepage: http://search.cpan.org/dist/App-perlzonji/
-  repository: git://github.com/hanekomu/App-perlzonji.git
-version: 1.111500
+  Time::HiRes: 0
+  autodie: 0
+  strict: 0
+  warnings: 0
+version: 1.20
