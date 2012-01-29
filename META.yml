@@ -32,4 +32,4 @@ requires:
   autodie: 0
   strict: 0
   warnings: 0
-version: 1.20
+version: 2.00
